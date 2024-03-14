@@ -178,6 +178,8 @@ createApp({
 
             activeChat: 0,
             message: '',
+            search: '',
+            newMessage: '',
         }
     },
 
@@ -205,7 +207,16 @@ createApp({
                     });
                 }, 1000);
             }
-        }
-    }
+        },
+    },
+
+    computed: {
+        filteredContacts() {
+            return this.contacts.filter(contact =>
+                contact.name.toLowerCase().includes(this.search.toLowerCase())
+            );
+        },
+    },
+
 
 }).mount('#app')

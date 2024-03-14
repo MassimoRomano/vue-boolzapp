@@ -37,12 +37,13 @@
               </div>
               <!-- serch -->
             </div>
-            <div class="serch">
+            <div class="search">
               <div class="bar">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input
                   type="search"
                   name=""
+                  v-model="search"
                   placeholder="Cerca o inizia una nuova chat"
                   id=""
                 />
@@ -51,7 +52,7 @@
             <!-- users -->
             <div class="users">
               <div
-                v-for="(contact, index) in contacts"
+                v-for="(contact, index) in filteredContacts"
                 :key="index"
                 class="card"
                 @click="changeUser(index)"
