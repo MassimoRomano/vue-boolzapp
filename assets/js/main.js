@@ -174,9 +174,16 @@ createApp({
                     ],
                 }
             ],
-            
+
 
             activeChat: 0,
         }
-    },    
+    },
+
+    methods: {
+        changeUser(index) {
+            this.activeChat = index;
+        },
+       
+    }
 }).mount('#app')

@@ -340,21 +340,23 @@ a{
 .message-1 {
     background-color: var(--chat-primary);
     height: auto;
-    width: 50%;
-    padding: 15px;
-    border-radius: 20px;
+    width: auto;
+    padding: 12px;
+    border-radius: 10px;
     margin: 0 10% 1% 45%;
     display: flex;
+    justify-content: space-between;
 }
 
 .message-2 {
     background-color: var(--serch-light-);
     height: auto;
-    width: 50%;
-    padding: 15px;
-    border-radius: 20px;
-    margin: 0 0 1% 5%;
+    width: auto;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 0 45% 1% 5%;
     display: flex;
+    justify-content: space-between;
 }
 
 /* menu message */
@@ -393,7 +395,7 @@ li:hover{
     .message-1 {
         background-color: #00ac4d;
         height: auto;
-        width: 50%;
+        width: auto;
         padding: 15px;
         border-radius: 20px;
         margin: 0 10% 1% 45%;
@@ -402,7 +404,7 @@ li:hover{
     .message-2 {
         background-color: #c7c9c9;
         height: auto;
-        width: 50%;
+        width: auto;
         padding: 15px;
         border-radius: 20px;
         margin: 0 0 1% 5%;
@@ -413,7 +415,7 @@ li:hover{
     .message-1 {
         background-color: #00ac4d;
         height: auto;
-        width: 80%;
+        width: auto;
         padding: 15px;
         border-radius: 20px;
         margin: 0 0 1% 18%;
@@ -422,7 +424,7 @@ li:hover{
     .message-2 {
         background-color: #c7c9c9;
         height: auto;
-        width: 80%;
+        width: auto;
         padding: 15px;
         border-radius: 20px;
         margin: 0 0 1% 2%;

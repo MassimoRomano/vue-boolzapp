@@ -50,7 +50,7 @@
             </div>
             <!-- users -->
             <div  class="users">
-              <div v-for="(contact, index) in contacts" class="card">
+                <div v-for="(contact, index) in contacts" :key="index" class="card" @click="changeUser(index)">
                 <img :src="contact.avatar" alt="" />
                 <div class="user-time">
                   <div>
@@ -166,10 +166,10 @@
           <div class="right-site">
             <div class="card-top">
               <div class="card">
-                <img src="./assets/img/avatar_1.jpg" alt="" />
+                <img :src="contacts[activeChat].avatar" :alt="contacts[activeChat].name" />
                 <div class="user-name">
-                  <h5>Michele</h5>
-                  <p>Ultimo accesso oggi alle 16:56</p>
+                  <h5>{{ contacts[activeChat].name }}</h5>
+                  <p>Ultimo accesso oggi alle {{ contacts[activeChat].time }}</p>
                 </div>
               </div>
               <div class="icon">
@@ -180,11 +180,8 @@
             </div>
             <!-- center message -->
             <div class="center-message">
-              <div class="message-1">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Beatae, modi similique facere perspiciatis nam odio ipsum, iure
-                vero ipsam eveniet itaque non ad id neque, asperiores
-                repudiandae odit fugit deleniti!
+                <div v-for="(message, messageIndex) in contacts[activeChat].messages" :key="messageIndex" class="message" :class="{ 'message-1': message.status === 'sent', 'message-2': message.status === 'received' }">
+                    {{ message.message }}
                 <div class="info">
                   <i class="col-3 fa-solid fa-chevron-down"></i>
                   <div class="info-message">
@@ -196,7 +193,7 @@
                 </div>
               </div>
               <!-- message -->
-              <div class="message-2">
+              <!-- <div class="message-2">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima
                 vel delectus cum totam itaque distinctio quod non doloremque,
                 molestiae nihil consectetur vero, debitis incidunt porro
@@ -270,7 +267,7 @@
                     </ul>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
             <!-- chat -->
             <div class="chat">
