@@ -11,13 +11,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="./assets/ccs/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>
     <div id="app">
       <main id="site_main">
-        <div class="app">
+        <div class="main-app">
           <!-- left site -->
           <div class="left-site">
             <div class="me-profile">
@@ -49,18 +49,18 @@
               </div>
             </div>
             <!-- users -->
-            <div class="users">
-              <div class="card">
-                <img src="./assets/img/avatar_1.jpg" alt="" />
+            <div  class="users">
+              <div v-for="(contact, index) in contacts" class="card">
+                <img :src="contact.avatar" alt="" />
                 <div class="user-time">
                   <div>
-                    <h5>Michele</h5>
-                    <p>Lorem ipsum dolor sit</p>
+                    <h5>{{contact.name}}</h5>
+                    <p>{{contact.messages[contact.messages.length - 1].message}}</p>
                   </div>
-                  <div class="time">19:55</div>
+                  <div class="time">{{contact.time}}</div>
                 </div>
               </div>
-              <div class="card">
+              <!-- <div class="card">
                 <img src="./assets/img/avatar_2.jpg" alt="" />
                 <div class="user-time">
                   <div>
@@ -159,7 +159,7 @@
                   </div>
                   <div class="time">19:55</div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
           <!-- rights site -->
@@ -287,5 +287,7 @@
         </div>
       </main>
     </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>

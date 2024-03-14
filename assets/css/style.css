@@ -31,7 +31,7 @@ body{
  
 }
 
-.app{
+.main-app{
     width: 100%;
     height: 95vh;
     margin: 40px auto 40px;
@@ -45,7 +45,7 @@ body{
         margin: 0;
     }
 
-    .app{
+    .main-app{
         height: 100%;
         margin: 0;
     }
@@ -58,7 +58,7 @@ body{
         height: 100%;
         margin: 0px;
     }
-    .app{
+    .main-app{
         height: 100%;
         margin: 0px;
         width: 100%;
@@ -227,6 +227,11 @@ a{
     flex-direction: row;
     justify-content: space-between;
     flex-grow: 1;
+    padding-right: 5px;
+
+    h5{
+        padding-bottom: 5px;
+    }
 }
 
 .time{
@@ -288,7 +293,7 @@ a{
 /* center chat */
 
 .center-message {
-    background-image: url(./img/mine.jpg);
+    background-image: url(../img/mine.jpg);
     background-repeat: repeat;
     width: 100%;
     height: calc(100% - 160px);
