@@ -49,13 +49,20 @@
               </div>
             </div>
             <!-- users -->
-            <div  class="users">
-                <div v-for="(contact, index) in contacts" :key="index" class="card" @click="changeUser(index)">
+            <div class="users">
+              <div
+                v-for="(contact, index) in contacts"
+                :key="index"
+                class="card"
+                @click="changeUser(index)"
+              >
                 <img :src="contact.avatar" alt="" />
                 <div class="user-time">
                   <div>
                     <h5>{{contact.name}}</h5>
-                    <p>{{contact.messages[contact.messages.length - 1].message}}</p>
+                    <p>
+                      {{contact.messages[contact.messages.length - 1].message}}
+                    </p>
                   </div>
                   <div class="time">{{contact.time}}</div>
                 </div>
@@ -166,10 +173,15 @@
           <div class="right-site">
             <div class="card-top">
               <div class="card">
-                <img :src="contacts[activeChat].avatar" :alt="contacts[activeChat].name" />
+                <img
+                  :src="contacts[activeChat].avatar"
+                  :alt="contacts[activeChat].name"
+                />
                 <div class="user-name">
                   <h5>{{ contacts[activeChat].name }}</h5>
-                  <p>Ultimo accesso oggi alle {{ contacts[activeChat].time }}</p>
+                  <p>
+                    Ultimo accesso oggi alle {{ contacts[activeChat].time }}
+                  </p>
                 </div>
               </div>
               <div class="icon">
@@ -180,8 +192,13 @@
             </div>
             <!-- center message -->
             <div class="center-message">
-                <div v-for="(message, messageIndex) in contacts[activeChat].messages" :key="messageIndex" class="message" :class="{ 'message-1': message.status === 'sent', 'message-2': message.status === 'received' }">
-                    {{ message.message }}
+              <div
+                v-for="(message, messageIndex) in contacts[activeChat].messages"
+                :key="messageIndex"
+                class="message"
+                :class="{ 'message-1': message.status === 'sent', 'message-2': message.status === 'received' }"
+              >
+                {{ message.message }}
                 <div class="info">
                   <i class="col-3 fa-solid fa-chevron-down"></i>
                   <div class="info-message">
@@ -274,8 +291,8 @@
               <i class="fa-regular fa-face-smile"></i>
               <input
                 type="text"
-                name=""
-                id=""
+                v-model="newMessage"
+                @keyup.enter="sendMessage"
                 placeholder="Scrivi un messaggio"
               />
               <i class="fa-solid fa-microphone"></i>

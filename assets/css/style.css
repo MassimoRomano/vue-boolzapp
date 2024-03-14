@@ -343,9 +343,10 @@ a{
     width: auto;
     padding: 12px;
     border-radius: 10px;
-    margin: 0 10% 1% 45%;
+    margin: 0 10% 1% auto;
     display: flex;
     justify-content: space-between;
+    gap: 30px;
 }
 
 .message-2 {
@@ -354,9 +355,10 @@ a{
     width: auto;
     padding: 12px;
     border-radius: 10px;
-    margin: 0 45% 1% 5%;
+    margin: 0 auto 1% 5%;
     display: flex;
     justify-content: space-between;
+    gap: 30px;
 }
 
 /* menu message */

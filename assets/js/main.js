@@ -177,6 +177,7 @@ createApp({
 
 
             activeChat: 0,
+            message: '',
         }
     },
 
@@ -184,6 +185,27 @@ createApp({
         changeUser(index) {
             this.activeChat = index;
         },
-       
+
+        sendMessage() {
+            if (this.newMessage.trim() !== '') {
+                // Aggiungi il nuovo messaggio al thread
+                this.contacts[this.activeChat].messages.push({
+                    date: new Date().toLocaleString(),
+                    message: this.newMessage,
+                    status: 'sent'
+                });
+                this.newMessage = '';
+
+                // Risposta dopo 1 secondo
+                setTimeout(() => {
+                    this.contacts[this.activeChat].messages.push({
+                        date: new Date().toLocaleString(),
+                        message: 'Ok',
+                        status: 'received'
+                    });
+                }, 1000);
+            }
+        }
     }
+
 }).mount('#app')
