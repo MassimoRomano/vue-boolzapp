@@ -208,6 +208,15 @@ createApp({
                 }, 1000);
             }
         },
+        deleteMessage(message) {
+            const index = this.contacts[this.activeChat].messages.indexOf(message)
+            if (index !== -1) {
+                this.contacts[this.activeChat].messages.splice(index, 1)
+            }
+        },
+        toggleDropDown(message) {
+            message.showDropdown = !message.showDropdown
+        }
     },
 
     computed: {
@@ -217,6 +226,7 @@ createApp({
             );
         },
     },
+
 
 
 }).mount('#app')

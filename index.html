@@ -68,106 +68,6 @@
                   <div class="time">{{contact.time}}</div>
                 </div>
               </div>
-              <!-- <div class="card">
-                <img src="./assets/img/avatar_2.jpg" alt="" />
-                <div class="user-time">
-                  <div>
-                    <h5>Fabio</h5>
-                    <p>Lorem ipsum dolor sit</p>
-                  </div>
-                  <div class="time">19:55</div>
-                </div>
-              </div>
-              <div class="card">
-                <img src="./assets/img/avatar_3.jpg" alt="" />
-                <div class="user-time">
-                  <div>
-                    <h5>Carlo</h5>
-                    <p>Lorem ipsum dolor sit</p>
-                  </div>
-                  <div class="time">19:55</div>
-                </div>
-              </div>
-              <div class="card">
-                <img src="./assets/img/avatar_4.jpg" alt="" />
-                <div class="user-time">
-                  <div>
-                    <h5>Giulio</h5>
-                    <p>Lorem ipsum dolor sit</p>
-                  </div>
-                  <div class="time">19:55</div>
-                </div>
-              </div>
-              <div class="card">
-                <img src="./assets/img/avatar_5.jpg" alt="" />
-                <div class="user-time">
-                  <div>
-                    <h5>Luca</h5>
-                    <p>Lorem ipsum dolor sit</p>
-                  </div>
-                  <div class="time">19:55</div>
-                </div>
-              </div>
-              <div class="card">
-                <img src="./assets/img/avatar_6.jpg" alt="" />
-                <div class="user-time">
-                  <div>
-                    <h5>Michela</h5>
-                    <p>Lorem ipsum dolor sit</p>
-                  </div>
-                  <div class="time">19:55</div>
-                </div>
-              </div>
-              <div class="card">
-                <img src="./assets/img/avatar_2.jpg" alt="" />
-                <div class="user-time">
-                  <div>
-                    <h5>Michele</h5>
-                    <p>Lorem ipsum dolor sit</p>
-                  </div>
-                  <div class="time">19:55</div>
-                </div>
-              </div>
-              <div class="card">
-                <img src="./assets/img/avatar_6.jpg" alt="" />
-                <div class="user-time">
-                  <div>
-                    <h5>Michele</h5>
-                    <p>Lorem ipsum dolor sit</p>
-                  </div>
-                  <div class="time">19:55</div>
-                </div>
-              </div>
-              <div class="card">
-                <img src="./assets/img/avatar_3.jpg" alt="" />
-                <div class="user-time">
-                  <div>
-                    <h5>Michele</h5>
-                    <p>Lorem ipsum dolor sit</p>
-                  </div>
-                  <div class="time">19:55</div>
-                </div>
-              </div>
-              <div class="card">
-                <img src="./assets/img/avatar_6.jpg" alt="" />
-                <div class="user-time">
-                  <div>
-                    <h5>Michele</h5>
-                    <p>Lorem ipsum dolor sit</p>
-                  </div>
-                  <div class="time">19:55</div>
-                </div>
-              </div>
-              <div class="card">
-                <img src="./assets/img/avatar_4.jpg" alt="" />
-                <div class="user-time">
-                  <div>
-                    <h5>Michele</h5>
-                    <p>Lorem ipsum dolor sit</p>
-                  </div>
-                  <div class="time">19:55</div>
-                </div>
-              </div> -->
             </div>
           </div>
           <!-- rights site -->
@@ -198,94 +98,19 @@
                 :key="messageIndex"
                 class="message"
                 :class="{ 'message-1': message.status === 'sent', 'message-2': message.status === 'received' }"
+                @click="toggleDropDown(messageIndex)"
               >
                 {{ message.message }}
-                <div class="info">
-                  <i class="col-3 fa-solid fa-chevron-down"></i>
-                  <div class="info-message">
+                <div  class="info" v-if="message.status === 'sent', 'received'">
+                  <i class="col-3 fa-solid fa-chevron-down" @click="toggleDropDown(message)"></i>
+                  <div class="dropdown-menu" v-if="message.showDropdown" >
                     <ul>
                       <li>Info messaggio</li>
-                      <li>Cancella messaggio</li>
+                      <li @click="deleteMessage(message)">Cancella messaggio</li>
                     </ul>
                   </div>
                 </div>
               </div>
-              <!-- message -->
-              <!-- <div class="message-2">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima
-                vel delectus cum totam itaque distinctio quod non doloremque,
-                molestiae nihil consectetur vero, debitis incidunt porro
-                excepturi? Dolorem debitis veniam placeat!
-                <div class="info">
-                  <i class="col-3 fa-solid fa-chevron-down"></i>
-                  <div class="info-message">
-                    <ul>
-                      <li>Info messaggio</li>
-                      <li>Cancella messaggio</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="message-1">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Beatae, modi similique facere perspiciatis nam odio ipsum, iure
-                vero ipsam eveniet itaque non ad id neque, asperiores
-                repudiandae odit fugit deleniti!
-                <div class="info">
-                  <i class="col-3 fa-solid fa-chevron-down"></i>
-                  <div class="info-message">
-                    <ul>
-                      <li>Info messaggio</li>
-                      <li>Cancella messaggio</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="message-2">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima
-                vel delectus cum totam itaque distinctio quod non doloremque,
-                molestiae nihil consectetur vero, debitis incidunt porro
-                excepturi? Dolorem debitis veniam placeat!
-                <div class="info">
-                  <i class="col-3 fa-solid fa-chevron-down"></i>
-                  <div class="info-message">
-                    <ul>
-                      <li>Info messaggio</li>
-                      <li>Cancella messaggio</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="message-1">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Beatae, modi similique facere perspiciatis nam odio ipsum, iure
-                vero ipsam eveniet itaque non ad id neque, asperiores
-                repudiandae odit fugit deleniti!
-                <div class="info">
-                  <i class="col-3 fa-solid fa-chevron-down"></i>
-                  <div class="info-message">
-                    <ul>
-                      <li>Info messaggio</li>
-                      <li>Cancella messaggio</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="message-2">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima
-                vel delectus cum totam itaque distinctio quod non doloremque,
-                molestiae nihil consectetur vero, debitis incidunt porro
-                excepturi? Dolorem debitis veniam placeat!
-                <div class="info">
-                  <i class="col-3 fa-solid fa-chevron-down"></i>
-                  <div class="info-message">
-                    <ul>
-                      <li>Info messaggio</li>
-                      <li>Cancella messaggio</li>
-                    </ul>
-                  </div>
-                </div>
-              </div> -->
             </div>
             <!-- chat -->
             <div class="chat">
